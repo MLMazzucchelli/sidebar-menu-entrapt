@@ -11,10 +11,11 @@ class SidebarMenu(SidebarMenuTemplate):
         # register items
         self.menu_items = {
             "home": {"link": self.link_home, "type": "item"},
-            "performance": {"link": self.link_performance, "type": "item"},
-            "indexing": {"link": self.link_indexing, "type": "group"},
-            "pages": {"link": self.link_pages, "type": "group-item"},
-            "video": {"link": self.link_video, "type": "group-item"},
+            "entrapment": {"link": self.link_calculate_entrapment, "type": "item"},
+            "project": {"link": self.link_project, "type": "group"},
+            "view_analyses": {"link": self.link_view_analyses, "type": "group-item"},
+            "new_project": {"link": self.link_new_project, "type": "group-item"},
+            "upload_project": {"link": self.link_upload_project, "type": "group-item"},
             "experience": {"link": self.link_experience, "type": "group"},
             "core_web": {"link": self.link_core_web, "type": "group-item"},
             "page_experience": {"link": self.link_page_experience, "type": "group-item"},
@@ -44,10 +45,14 @@ class SidebarMenu(SidebarMenuTemplate):
 
         self.selected_item = id_string
 
-        if self.first_load == False:
+        if not self.first_load:
             self.raise_event('clicked', clicked_item=id_string)
         else:
             self.first_load = False
+
+    def unselect(self):
+        for i in self.menu_items:
+            self.menu_items[i]["link"].role = None
         
 
 
@@ -55,25 +60,27 @@ class SidebarMenu(SidebarMenuTemplate):
         self.set_selected("home")
         #open_form('Home')
 
-    def link_performance_click(self, **event_args):
-        self.set_selected("performance")
+    def link_calculate_entrapment_click(self, **event_args):
+        self.set_selected("entrapment")
 
-    def link_indexing_click(self, **event_args):
-        if self.link_indexing.icon == "fa:angle-right":
-            self.link_indexing.icon = "fa:angle-down"
-            self.link_pages.visible = True
-            self.link_video.visible = True
+    def link_project_click(self, **event_args):
+        if self.link_project.icon == "fa:angle-right":
+            self.link_project.icon = "fa:angle-down"
+            self.link_view_analyses.visible    = True
+            self.link_new_project.visible      = True
+            self.link_upload_project.visible   = True
         else:
-            self.link_indexing.icon = "fa:angle-right"
-            self.link_pages.visible = False
-            self.link_video.visible = False
+            self.link_project.icon = "fa:angle-right"
+            self.link_view_analyses.visible = False
+            self.link_new_project.visible = False
+            self.link_upload_project.visible   = False
             
-    def link_pages_click(self, **event_args):
-        self.set_selected("pages")
+    def link_view_analyses_click(self, **event_args):
+        self.set_selected("view_analyses")
 
-    def link_video_click(self, **event_args):
-        self.set_selected("video")
-        #open_form('Video')
+    def link_new_project_click(self, **event_args):
+        self.set_selected("new_project")
+
 
     def link_experience_click(self, **event_args):
         if self.link_experience.icon == "fa:angle-right":
@@ -95,4 +102,11 @@ class SidebarMenu(SidebarMenuTemplate):
         self.set_selected("links")
 
     def link_settings_click(self, **event_args):
-        self.set_selected("settings")
+         self.set_selected("settings")
+         self.unselect()
+
+    def link_upload_project_change(self, file, **event_args):
+      self.set_selected("view_analyses")
+      self.link_upload_project.clear()
+
+

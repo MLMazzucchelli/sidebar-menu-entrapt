@@ -5,30 +5,44 @@ components:
   name: link_home
   properties: {icon: 'fa:home', role: null, text: Home}
   type: Link
-- components: []
-  event_bindings: {click: link_performance_click}
-  layout_properties: {grid_position: 'OAWKBX,GPVJXH'}
-  name: link_performance
-  properties: {icon: 'fa:line-chart', role: null, text: Performance}
-  type: Link
 - layout_properties: {grid_position: 'NZEWWS,PWYAQL'}
   name: separator_1
   properties: {}
   type: form:SidebarMenu.Separator
-- event_bindings: {click: link_indexing_click}
+- event_bindings: {click: link_project_click}
   layout_properties: {grid_position: 'GNYRQX,DJLYPQ'}
-  name: link_indexing
-  properties: {col_spacing: medium, icon: 'fa:angle-down', role: null, spacing_above: small, text: Indexing}
+  name: link_project
+  properties: {bold: true, col_spacing: medium, icon: 'fa:angle-down', role: null, spacing_above: small, text: Project}
   type: Link
-- event_bindings: {click: link_pages_click}
+- event_bindings: {click: link_view_analyses_click}
   layout_properties: {grid_position: 'FRZSND,GMWWVT'}
-  name: link_pages
-  properties: {align: left, icon: 'fa:files-o', icon_align: left, role: null, text: Pages}
+  name: link_view_analyses
+  properties: {align: left, icon: 'fa:table', icon_align: left, role: null, text: View analyses}
   type: Link
-- event_bindings: {click: link_video_click}
-  layout_properties: {grid_position: 'CCSAUJ,CPAKMM'}
-  name: link_video
-  properties: {align: left, icon: 'fa:youtube-play', role: null, text: Video pages}
+- components: []
+  event_bindings: {click: link_new_project_click}
+  layout_properties: {grid_position: 'IXHURC,KMGYCF'}
+  name: link_new_project
+  properties: {align: left, icon: 'fa:youtube-play', role: null, text: New project}
+  type: Link
+- layout_properties: {grid_position: 'TIHSHG,AJMRXR'}
+  name: separator_5
+  properties: {}
+  type: form:SidebarMenu.Separator
+- event_bindings: {change: link_upload_project_change}
+  layout_properties: {grid_position: 'UWNVIN,UKESXZ'}
+  name: link_upload_project
+  properties: {align: left, text: Upload project}
+  type: FileLoader
+- layout_properties: {grid_position: 'ZRHVJN,QKSWRR'}
+  name: separator_4
+  properties: {}
+  type: form:SidebarMenu.Separator
+- components: []
+  event_bindings: {click: link_calculate_entrapment_click}
+  layout_properties: {grid_position: 'ILNMOR,WXJYGR'}
+  name: link_calculate_entrapment
+  properties: {bold: true, icon: 'fa:location-arrow', role: null, text: Entrapment}
   type: Link
 - layout_properties: {grid_position: 'XPYGSR,HLXOKY'}
   name: separator_2

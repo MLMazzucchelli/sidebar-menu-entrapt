@@ -1,8 +1,8 @@
 allow_embedding: false
 correct_dependency_ids: {}
 dependencies: []
-name: sidebar_menu
-package_name: sidebar_menu
+name: sidebar_menu_entrapt
+package_name: sidebar_menu_entrapt
 renamed: true
 runtime_options: {client_version: '3', server_spec: null, server_version: python3-full, version: 2}
 services:
