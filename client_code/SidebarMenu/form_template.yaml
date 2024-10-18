@@ -1,0 +1,77 @@
+components:
+- components: []
+  event_bindings: {click: link_home_click}
+  layout_properties: {grid_position: 'IRVNDY,WWHISV'}
+  name: link_home
+  properties: {icon: 'fa:home', role: null, text: Home}
+  type: Link
+- components: []
+  event_bindings: {click: link_performance_click}
+  layout_properties: {grid_position: 'OAWKBX,GPVJXH'}
+  name: link_performance
+  properties: {icon: 'fa:line-chart', role: null, text: Performance}
+  type: Link
+- layout_properties: {grid_position: 'NZEWWS,PWYAQL'}
+  name: separator_1
+  properties: {}
+  type: form:SidebarMenu.Separator
+- event_bindings: {click: link_indexing_click}
+  layout_properties: {grid_position: 'GNYRQX,DJLYPQ'}
+  name: link_indexing
+  properties: {col_spacing: medium, icon: 'fa:angle-down', role: null, spacing_above: small, text: Indexing}
+  type: Link
+- event_bindings: {click: link_pages_click}
+  layout_properties: {grid_position: 'FRZSND,GMWWVT'}
+  name: link_pages
+  properties: {align: left, icon: 'fa:files-o', icon_align: left, role: null, text: Pages}
+  type: Link
+- event_bindings: {click: link_video_click}
+  layout_properties: {grid_position: 'CCSAUJ,CPAKMM'}
+  name: link_video
+  properties: {align: left, icon: 'fa:youtube-play', role: null, text: Video pages}
+  type: Link
+- layout_properties: {grid_position: 'XPYGSR,HLXOKY'}
+  name: separator_2
+  properties: {}
+  type: form:SidebarMenu.Separator
+- event_bindings: {click: link_experience_click}
+  layout_properties: {grid_position: 'KPPXWD,BSUIOO'}
+  name: link_experience
+  properties: {icon: 'fa:angle-right', role: null, text: Experience}
+  type: Link
+- event_bindings: {click: link_core_web_click}
+  layout_properties: {grid_position: 'VZIXUC,PRRLWR'}
+  name: link_core_web
+  properties: {align: left, icon: 'fa:tachometer', role: null, text: Core web vitals, visible: false}
+  type: Link
+- event_bindings: {click: link_page_experience_click}
+  layout_properties: {grid_position: 'AMXZQO,WVAHNO'}
+  name: link_page_experience
+  properties: {align: left, icon: 'fa:star', role: null, text: Page experience, visible: false}
+  type: Link
+- layout_properties: {grid_position: 'MEXNEI,CKGFSJ'}
+  name: separator_3
+  properties: {}
+  type: form:SidebarMenu.Separator
+- event_bindings: {click: link_links_click}
+  layout_properties: {grid_position: 'HAHJSP,NTROSQ'}
+  name: link_links
+  properties: {icon: 'fa:link', role: null, text: Links}
+  type: Link
+- event_bindings: {click: link_settings_click}
+  layout_properties: {grid_position: 'XAZXAL,JMQTTG'}
+  name: link_settings
+  properties: {icon: 'fa:gear', role: null, text: Settings}
+  type: Link
+container:
+  properties: {col_spacing: none, spacing_above: none, spacing_below: none}
+  type: ColumnPanel
+custom_component: true
+events:
+- default_event: true
+  name: clicked
+  parameters:
+  - {name: clicked_item}
+is_package: true
+properties:
+- {default_binding_prop: true, default_value: '', important: true, name: selected_item, type: string}

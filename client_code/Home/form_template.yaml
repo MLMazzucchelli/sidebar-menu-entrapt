@@ -1,0 +1,7 @@
+components:
+- layout_properties: {grid_position: 'UKMAFZ,XYALGV'}
+  name: label_1
+  properties: {text: HOME}
+  type: Label
+container: {type: ColumnPanel}
+is_package: true

@@ -1,0 +1,13 @@
+allow_embedding: false
+correct_dependency_ids: {}
+dependencies: []
+name: Clone of sidebar_menu
+package_name: sidebar_menu
+renamed: true
+runtime_options: {client_version: '3', server_spec: null, server_version: python3-full, version: 2}
+services:
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/tables.yml
+startup: {module: MAIN, type: form}
+startup_form: null

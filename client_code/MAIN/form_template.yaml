@@ -1,0 +1,19 @@
+components:
+- components: []
+  layout_properties: {slot: default}
+  name: content_panel
+  properties: {col_widths: '{}'}
+  type: ColumnPanel
+- layout_properties: {slot: nav-right}
+  name: navbar_links
+  properties: {}
+  type: FlowPanel
+- event_bindings: {clicked: sidebar_menu_1_clicked}
+  layout_properties: {slot: left-nav}
+  name: sidebar_menu_1
+  properties: {}
+  type: form:SidebarMenu
+container:
+  properties: {html: '@theme:standard-page.html'}
+  type: HtmlTemplate
+is_package: true

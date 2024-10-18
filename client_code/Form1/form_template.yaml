@@ -1,0 +1,82 @@
+components:
+- components: []
+  layout_properties: {slot: default}
+  name: content_panel
+  properties: {col_widths: '{}'}
+  type: ColumnPanel
+- layout_properties: {slot: nav-right}
+  name: navbar_links
+  properties: {}
+  type: FlowPanel
+- components:
+  - event_bindings: {click: link_home_click}
+    layout_properties: {grid_position: 'JIHYOF,LFCGRY'}
+    name: link_home
+    properties: {icon: 'fa:home', role: null, text: Home}
+    type: Link
+  - components: []
+    event_bindings: {click: link_performance_click}
+    layout_properties: {grid_position: 'RWRNZF,VJAENA'}
+    name: link_performance
+    properties: {icon: 'fa:line-chart', role: null, text: Performance}
+    type: Link
+  - layout_properties: {grid_position: 'VGJMAP,AVHRLG'}
+    name: separator_1
+    properties: {}
+    type: form:SidebarMenu.Separator
+  - components: []
+    event_bindings: {click: link_indexing_click}
+    layout_properties: {grid_position: 'WQJWZI,BPDFHT'}
+    name: link_indexing
+    properties: {col_spacing: medium, icon: 'fa:angle-down', role: null, spacing_above: small, text: Indexing}
+    type: Link
+  - event_bindings: {click: link_pages_click}
+    layout_properties: {grid_position: 'OYYNHI,QJSDTX'}
+    name: link_pages
+    properties: {align: left, icon: 'fa:files-o', icon_align: left, role: null, text: Pages}
+    type: Link
+  - event_bindings: {click: link_video_click}
+    layout_properties: {grid_position: 'FQIEIH,XEJCKR'}
+    name: link_video
+    properties: {align: left, icon: 'fa:youtube-play', role: null, text: Video pages}
+    type: Link
+  - layout_properties: {grid_position: 'UJQQON,FAHQBL'}
+    name: separator_2
+    properties: {}
+    type: form:SidebarMenu.Separator
+  - components: []
+    event_bindings: {click: link_experience_click}
+    layout_properties: {grid_position: 'OCHSSG,HVFCBM'}
+    name: link_experience
+    properties: {icon: 'fa:angle-right', role: null, text: Experience}
+    type: Link
+  - event_bindings: {click: link_page_experience_click}
+    layout_properties: {grid_position: 'CHCVZP,VIYDFH'}
+    name: link_page_experience
+    properties: {align: left, icon: 'fa:star', role: null, text: Page experience, visible: false}
+    type: Link
+  - event_bindings: {click: link_core_web_click}
+    layout_properties: {grid_position: 'PVJCKX,VCPLSZ'}
+    name: link_core_web
+    properties: {align: left, icon: 'fa:tachometer', role: null, text: Core web vitals, visible: false}
+    type: Link
+  - components: []
+    event_bindings: {click: link_links_click}
+    layout_properties: {grid_position: 'KMEQXK,XXXYGC'}
+    name: link_links
+    properties: {icon: 'fa:link', role: null, text: Links}
+    type: Link
+  - components: []
+    event_bindings: {click: link_settings_click}
+    layout_properties: {grid_position: 'PQWMTJ,SUQUHV'}
+    name: link_settings
+    properties: {icon: 'fa:gear', role: null, text: Settings}
+    type: Link
+  layout_properties: {slot: left-nav}
+  name: column_panel_1
+  properties: {}
+  type: ColumnPanel
+container:
+  properties: {html: '@theme:standard-page.html'}
+  type: HtmlTemplate
+is_package: true
