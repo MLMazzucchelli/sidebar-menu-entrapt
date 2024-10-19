@@ -23,10 +23,10 @@ components:
   event_bindings: {click: link_new_project_click}
   layout_properties: {grid_position: 'IXHURC,KMGYCF'}
   name: link_new_project
-  properties: {align: left, icon: 'fa:youtube-play', role: null, text: New project}
+  properties: {align: left, icon: 'fa:plus', role: null, text: New project}
   type: Link
 - event_bindings: {change: link_upload_project_change}
-  layout_properties: {full_width_row: true, grid_position: 'UWNVIN,UKESXZ'}
+  layout_properties: {full_width_row: false, grid_position: 'UWNVIN,UKESXZ'}
   name: link_upload_project
   properties: {align: left, text: Upload project}
   type: FileLoader
@@ -40,38 +40,14 @@ components:
   name: link_calculate_entrapment
   properties: {bold: true, icon: 'fa:location-arrow', role: null, text: Entrapment}
   type: Link
-- layout_properties: {grid_position: 'XPYGSR,HLXOKY'}
-  name: separator_2
-  properties: {}
-  type: form:SidebarMenu.Separator
-- event_bindings: {click: link_experience_click}
-  layout_properties: {grid_position: 'KPPXWD,BSUIOO'}
-  name: link_experience
-  properties: {icon: 'fa:angle-right', role: null, text: Experience}
-  type: Link
-- event_bindings: {click: link_core_web_click}
-  layout_properties: {grid_position: 'VZIXUC,PRRLWR'}
-  name: link_core_web
-  properties: {align: left, icon: 'fa:tachometer', role: null, text: Core web vitals, visible: false}
-  type: Link
-- event_bindings: {click: link_page_experience_click}
-  layout_properties: {grid_position: 'AMXZQO,WVAHNO'}
-  name: link_page_experience
-  properties: {align: left, icon: 'fa:star', role: null, text: Page experience, visible: false}
-  type: Link
 - layout_properties: {grid_position: 'MEXNEI,CKGFSJ'}
   name: separator_3
   properties: {}
   type: form:SidebarMenu.Separator
-- event_bindings: {click: link_links_click}
-  layout_properties: {grid_position: 'HAHJSP,NTROSQ'}
-  name: link_links
-  properties: {icon: 'fa:link', role: null, text: Links}
-  type: Link
 - event_bindings: {click: link_settings_click}
   layout_properties: {grid_position: 'XAZXAL,JMQTTG'}
   name: link_settings
-  properties: {icon: 'fa:gear', role: null, text: Settings}
+  properties: {icon: 'fa:gears', role: null, text: Settings}
   type: Link
 container:
   properties: {col_spacing: none, spacing_above: none, spacing_below: none}

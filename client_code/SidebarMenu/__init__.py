@@ -16,10 +16,6 @@ class SidebarMenu(SidebarMenuTemplate):
             "view_analyses": {"link": self.link_view_analyses, "type": "group-item"},
             "new_project": {"link": self.link_new_project, "type": "group-item"},
             "upload_project": {"link": self.link_upload_project, "type": "group-item"},
-            "experience": {"link": self.link_experience, "type": "group"},
-            "core_web": {"link": self.link_core_web, "type": "group-item"},
-            "page_experience": {"link": self.link_page_experience, "type": "group-item"},
-            "links": {"link": self.link_links, "type": "item"},
             "settings": {"link": self.link_settings, "type": "item"}
         }
 
@@ -37,7 +33,7 @@ class SidebarMenu(SidebarMenuTemplate):
         self.first_load = True
         self.set_selected("home")
 
-    def set_selected(self, id_string):
+    def set_selected(self, id_string, file = []):
         for i in self.menu_items:
             self.menu_items[i]["link"].role = None
 
@@ -46,9 +42,11 @@ class SidebarMenu(SidebarMenuTemplate):
         self.selected_item = id_string
 
         if not self.first_load:
-            self.raise_event('clicked', clicked_item=id_string)
+            self.raise_event('clicked', clicked_item=id_string, file = file)
         else:
             self.first_load = False
+
+      
 
     def unselect(self):
         for i in self.menu_items:
@@ -80,33 +78,19 @@ class SidebarMenu(SidebarMenuTemplate):
 
     def link_new_project_click(self, **event_args):
         self.set_selected("new_project")
+        self.unselect()
+        self.set_selected("view_analyses")
 
-
-    def link_experience_click(self, **event_args):
-        if self.link_experience.icon == "fa:angle-right":
-            self.link_experience.icon = "fa:angle-down"
-            self.link_page_experience.visible = True
-            self.link_core_web.visible = True
-        else:
-            self.link_experience.icon = "fa:angle-right"
-            self.link_page_experience.visible = False
-            self.link_core_web.visible = False
-
-    def link_page_experience_click(self, **event_args):
-        self.set_selected("page_experience")
-
-    def link_core_web_click(self, **event_args):
-        self.set_selected("core_web")
-
-    def link_links_click(self, **event_args):
-        self.set_selected("links")
 
     def link_settings_click(self, **event_args):
          self.set_selected("settings")
          self.unselect()
 
     def link_upload_project_change(self, file, **event_args):
-      self.set_selected("view_analyses")
+      self.set_selected("upload_project", file)
       self.link_upload_project.clear()
+      self.unselect()
+      self.set_selected("view_analyses")
+     
 
 
