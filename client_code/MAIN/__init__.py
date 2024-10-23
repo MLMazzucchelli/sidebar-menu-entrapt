@@ -12,8 +12,8 @@ class MAIN(MAINTemplate):
         _Navigation.register_Homeview(self)
         print("MAIN LOADED")
 
-    def sidebar_menu_1_clicked(self, clicked_item, **event_args):
-        print(clicked_item)
+    def sidebar_menu_1_clicked(self, **event_args):
+        #print(clicked_item)
 
         print(self.sidebar_menu_1.selected_item)
 
