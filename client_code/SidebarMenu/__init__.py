@@ -33,6 +33,12 @@ class SidebarMenu(SidebarMenuTemplate):
         self.first_load = True
         self.set_selected("home")
 
+        #Set the project menu
+        self.link_project.icon == "fa:angle-right"
+        self.link_view_analyses.visible = False
+        self.link_new_project.visible = False
+        self.link_upload_project.visible   = False
+
     def set_selected(self, id_string, file = []):
         for i in self.menu_items:
             self.menu_items[i]["link"].role = None
