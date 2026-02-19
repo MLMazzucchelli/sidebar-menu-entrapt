@@ -30,6 +30,18 @@ class SidebarMenu(SidebarMenuTemplate):
             if item["type"] == "group-item":
                 dom_item.style.paddingLeft = "25px"
 
+            if menu_item == "upload_project":
+                # FileLoader renders an internal label/button; inherit sidebar text color.
+                try:
+                    upload_label = dom_item.querySelector("label")
+                    if upload_label is not None:
+                        upload_label.style.setProperty("color", "inherit", "important")
+                        upload_label.style.setProperty("background-color", "transparent", "important")
+                        upload_label.style.setProperty("background-image", "none", "important")
+                        upload_label.style.setProperty("box-shadow", "none", "important")
+                except Exception:
+                    pass
+
         self.first_load = True
         self.set_selected("home")
 
@@ -41,9 +53,13 @@ class SidebarMenu(SidebarMenuTemplate):
 
     def set_selected(self, id_string, file = []):
         for i in self.menu_items:
-            self.menu_items[i]["link"].role = None
+            self.menu_items[i]["link"].role = self._base_role_for_item(i)
 
-        self.menu_items[id_string]["link"].role = "selected"
+        selected_base = self._base_role_for_item(id_string)
+        if selected_base is None:
+            self.menu_items[id_string]["link"].role = "selected"
+        else:
+            self.menu_items[id_string]["link"].role = [selected_base, "selected"]
 
         self.selected_item = id_string
 
@@ -56,7 +72,12 @@ class SidebarMenu(SidebarMenuTemplate):
 
     def unselect(self):
         for i in self.menu_items:
-            self.menu_items[i]["link"].role = None
+            self.menu_items[i]["link"].role = self._base_role_for_item(i)
+
+    def _base_role_for_item(self, id_string):
+        if id_string == "upload_project":
+            return "black-upload"
+        return None
         
 
 

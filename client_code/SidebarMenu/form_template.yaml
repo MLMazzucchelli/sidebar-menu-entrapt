@@ -30,6 +30,7 @@ components:
   name: link_upload_project
   properties:
     align: left
+    role: black-upload
     spacing:
       padding: [null, null, null, '0']
     text: Upload project

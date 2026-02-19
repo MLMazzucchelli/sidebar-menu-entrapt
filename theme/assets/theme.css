@@ -212,6 +212,15 @@ color: %color:On Primary Container%;
 /* Allow overflows to show drop shadows in ColumnPanels
    This can create unwanted scrollbars; we compensate for this at the top level with .nav-holder .content {overflow-x: hidden;}
 */
+
+/* Keep upload FileLoader text aligned with regular sidebar link color */
+.anvil-role-black-upload.file-loader > label,
+.anvil-role-black-upload.file-loader > label.btn,
+.anvil-role-black-upload.file-loader > label.btn-default,
+.anvil-role-black-upload.file-loader > label .label-text,
+.anvil-role-black-upload.file-loader > label .anvil-component-icon {
+  color: %color:On Surface Variant% !important;
+}
 .anvil-container-overflow {
   overflow-x: visible;
   overflow-y: visible;
@@ -356,6 +365,24 @@ color: %color:On Primary Container%;
   border-radius: 100px;
 }
 
+/* Match FileLoader (Upload project) styling with sidebar links */
+.left-nav .file-loader > label,
+.left-nav .file-loader > label.btn,
+.left-nav .file-loader > label.btn-default {
+  color: %color:On Surface Variant%;
+  margin: 0 -8px;
+  padding: 4px 16px;
+  border-radius: 100px;
+  background: transparent;
+  box-shadow: none;
+  text-align: left;
+  width: 100%;
+  border: 0;
+  background-image: none;
+  color: %color:On Surface Variant% !important;
+  background-color: transparent !important;
+}
+
 .left-nav .anvil-component.left_edge-icon {
   padding-left: 72px;
 }
@@ -365,13 +392,47 @@ color: %color:On Primary Container%;
   opacity: 100%;
 }
 
+.left-nav .file-loader > label:hover,
+.left-nav .file-loader > label:focus,
+.left-nav .file-loader > label:active,
+.left-nav .file-loader > label.btn:hover,
+.left-nav .file-loader > label.btn:focus,
+.left-nav .file-loader > label.btn:active {
+  background: linear-gradient(0deg, %color:Dark Overlay 1%, %color:Dark Overlay 1%), linear-gradient(0deg, %color:Primary Overlay 1%, %color:Primary Overlay 1%), %color:Background%;
+  color: %color:On Surface Variant% !important;
+  background-color: transparent !important;
+  background-image: linear-gradient(0deg, %color:Dark Overlay 1%, %color:Dark Overlay 1%), linear-gradient(0deg, %color:Primary Overlay 1%, %color:Primary Overlay 1%), %color:Background% !important;
+}
+
 .left-nav a.anvil-role-selected, .app-bar a.anvil-role-selected  {
   background-color: %color:Secondary Container%;
   color: %color:On Secondary Container%;
 }
 
+.left-nav .file-loader.anvil-role-selected > label,
+.left-nav .file-loader.anvil-role-selected > label.btn {
+  background-color: %color:Secondary Container%;
+  color: %color:On Secondary Container% !important;
+}
+
 .left-nav a.anvil-role-selected:hover, .app-bar a.anvil-role-selected:hover {
   background: linear-gradient(0deg, %color:Dark Overlay 1%, %color:Dark Overlay 1%), %color:Secondary Container%;
+}
+
+.left-nav .file-loader.anvil-role-selected > label:hover,
+.left-nav .file-loader.anvil-role-selected > label:focus,
+.left-nav .file-loader.anvil-role-selected > label:active,
+.left-nav .file-loader.anvil-role-selected > label.btn:hover,
+.left-nav .file-loader.anvil-role-selected > label.btn:focus,
+.left-nav .file-loader.anvil-role-selected > label.btn:active {
+  background: linear-gradient(0deg, %color:Dark Overlay 1%, %color:Dark Overlay 1%), %color:Secondary Container%;
+  color: %color:On Secondary Container% !important;
+}
+
+.left-nav .file-loader.anvil-disabled > label,
+.left-nav .file-loader.anvil-disabled > label:hover {
+  color: %color:On Disabled% !important;
+  background: transparent !important;
 }
 
 .designer .nav-holder .left-nav {
