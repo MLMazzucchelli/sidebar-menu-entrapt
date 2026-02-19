@@ -19,6 +19,10 @@ components:
   name: link_view_analyses
   properties: {align: left, icon: 'fa:table', icon_align: left, role: null, text: View analyses}
   type: Link
+- layout_properties: {grid_position: 'IXRJRX,ODLEVV'}
+  name: separator_2
+  properties: {}
+  type: form:SidebarMenu.Separator
 - components: []
   event_bindings: {click: link_new_project_click}
   layout_properties: {grid_position: 'IXHURC,KMGYCF'}
@@ -35,6 +39,10 @@ components:
       padding: [null, null, null, '0']
     text: Upload project
   type: FileLoader
+- layout_properties: {grid_position: 'VRCXOF,FGWYGQ'}
+  name: separator_5
+  properties: {}
+  type: form:SidebarMenu.Separator
 - layout_properties: {grid_position: 'ZRHVJN,QKSWRR'}
   name: separator_4
   properties: {}
