@@ -12,7 +12,7 @@ components:
 - event_bindings: {click: link_project_click}
   layout_properties: {grid_position: 'GNYRQX,DJLYPQ'}
   name: link_project
-  properties: {bold: true, col_spacing: medium, icon: 'fa:angle-down', role: null, spacing_above: small, text: Project}
+  properties: {bold: true, col_spacing: medium, icon: 'fa:angle-right', role: null, spacing_above: small, text: Project}
   type: Link
 - event_bindings: {click: link_view_analyses_click}
   layout_properties: {grid_position: 'FRZSND,GMWWVT'}
