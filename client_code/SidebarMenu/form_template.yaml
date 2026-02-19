@@ -28,7 +28,11 @@ components:
 - event_bindings: {change: link_upload_project_change}
   layout_properties: {full_width_row: false, grid_position: 'UWNVIN,UKESXZ'}
   name: link_upload_project
-  properties: {align: left, text: Upload project}
+  properties:
+    align: left
+    spacing:
+      padding: [null, null, null, '0']
+    text: Upload project
   type: FileLoader
 - layout_properties: {grid_position: 'ZRHVJN,QKSWRR'}
   name: separator_4
