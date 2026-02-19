@@ -45,11 +45,15 @@ class SidebarMenu(SidebarMenuTemplate):
         self.first_load = True
         self.set_selected("home")
 
-        #Set the project menu
-        self.link_project.icon == "fa:angle-right"
-        self.link_view_analyses.visible = False
-        self.link_new_project.visible = False
-        self.link_upload_project.visible   = False
+        # Keep project section elements in sync (submenu links + separators).
+        self._project_children = [
+            self.link_view_analyses,
+            self.separator_2,
+            self.link_new_project,
+            self.link_upload_project,
+            self.separator_5,
+        ]
+        self._set_project_expanded(False)
 
     def set_selected(self, id_string, file = []):
         for i in self.menu_items:
@@ -89,16 +93,7 @@ class SidebarMenu(SidebarMenuTemplate):
         self.set_selected("entrapment")
 
     def link_project_click(self, **event_args):
-        if self.link_project.icon == "fa:angle-right":
-            self.link_project.icon = "fa:angle-down"
-            self.link_view_analyses.visible    = True
-            self.link_new_project.visible      = True
-            self.link_upload_project.visible   = True
-        else:
-            self.link_project.icon = "fa:angle-right"
-            self.link_view_analyses.visible = False
-            self.link_new_project.visible = False
-            self.link_upload_project.visible   = False
+        self._set_project_expanded(self.link_project.icon == "fa:angle-right")
             
     def link_view_analyses_click(self, **event_args):
         self.set_selected("view_analyses")
@@ -118,6 +113,11 @@ class SidebarMenu(SidebarMenuTemplate):
       self.link_upload_project.clear()
       self.unselect()
       self.set_selected("view_analyses")
+
+    def _set_project_expanded(self, expanded):
+        self.link_project.icon = "fa:angle-down" if expanded else "fa:angle-right"
+        for component in self._project_children:
+            component.visible = expanded
      
 
 
